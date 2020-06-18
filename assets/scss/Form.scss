@@ -1,0 +1,47 @@
+form{
+  h2{
+    font-size: 30px;
+    font-weight: 900;
+  }
+  .form-grp{
+    display: flex;
+    flex-direction: column;
+    label{
+      font-size: 18px;
+      font-weight: 900;
+      margin: 10px 0;
+    }
+    input{
+      height: 40px;
+      border: none;
+      background: #eeeeee;
+      padding-left: 10px;
+      margin-bottom: 10px;
+      &:focus{
+        outline: 1px solid #c7c7c7; ;
+      }
+    }
+    textarea{
+      height: 100px;
+    }
+    &.form-grp-img{
+      div{
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        img{
+          width: 200px;
+          height: 133px;
+          margin-bottom: 15px;
+          cursor: pointer;
+        }
+      }
+
+    }
+  }
+  button{
+    margin-top: 10px;
+  }
+}

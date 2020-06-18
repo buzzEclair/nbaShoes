@@ -1,0 +1,127 @@
+$colorS : rgb(238, 238, 238);
+$colorP : rgb(196, 196, 196);
+
+.container-basket{
+  width: 1290px;
+  margin: 0 auto;
+  .basket-info{
+    display: flex;
+    justify-content: space-between;
+  }
+  h2{
+    font-size: 60px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 900;
+  }
+  table{
+    border-collapse: collapse;
+    width: 100%;
+    thead{
+      tr{
+        th{
+          padding-bottom: 10px;
+          border-bottom: 1px solid $colorP;
+          color: $colorP;
+          text-align: left;
+          &:nth-child(1){
+            width: 45%;
+          }
+          &:nth-child(2){
+            width: 45%;
+            text-align: center;
+          }
+          &:nth-child(3){
+            width: 10%;
+            text-align: center;
+          }
+        }
+      }
+    }
+    tbody{
+      tr{
+        td{
+          img{
+            width: 100px;
+          }
+          height: 150px;
+          border-bottom: 1px solid $colorP;
+          span.table-td-remove{
+            cursor: pointer;
+          }
+          div{
+            display: flex;
+            div{
+              display: flex;
+              flex-direction: column;
+              margin-left: 20px;
+              justify-content: center;
+            }
+          }
+          
+          &:nth-child(2){
+            text-align: center;
+            font-size: 20px;
+            font-weight: 400;
+          }
+          &:nth-child(3){
+            text-align: center;
+            font-size: 30px;
+            color: $colorP;
+          }
+        }
+      }
+    }
+  }
+}
+
+.basket-left{
+  width: 60%;
+ 
+}
+
+.basket-right{
+  width: 30%;
+  height: 400px;
+  background: $colorS;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .basket-code{
+    display: flex;
+    input{
+      height: 46px;
+      width: 60%;
+      padding: 0 0 0 15px;
+      font-size: 20px;
+      text-transform: uppercase;
+      border: 2px solid #101010;
+      border-right: 0px;
+      color: #101010;
+    }
+    button{
+      width: 40%;
+      height: 50px;
+      font-size: 17px;
+      font-weight: 600;
+      border: 2px solid #101010;
+    }
+  }
+  .basket-bill{
+    div{
+      display: flex;
+      justify-content: space-between;
+      font-size: 16px;
+      margin: 30px 0;
+      &.total-bill{
+        font-size: 25px;
+        font-weight: 600;
+      }
+    }
+  }
+  button{
+    height: 60px;
+  }
+
+}

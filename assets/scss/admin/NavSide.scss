@@ -1,0 +1,41 @@
+$colorActive : rgb(75, 131, 204);
+$colorInactive: #b1b1b1;
+.nav-side{
+  display: flex;
+  flex-direction: column;
+  width: 12%;
+  position: absolute;
+  height: 100%;
+  background: rgb(236, 236, 236);
+  border-right: 2px solid rgb(207, 207, 207);
+  .item{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 40px;
+    font-size: 30px;
+    width: 100%;
+    margin-top: 50px;
+    color: $colorInactive;
+    cursor: pointer;
+    &.item-active{
+      border-right: 2px solid $colorActive;
+      color: #101010;
+      ion-icon{
+        color: $colorActive;
+      }
+      span{
+        font-weight: 600;
+      }
+    }
+    ion-icon{
+      margin-left: 30px;
+    }
+    span{
+      font-size: 16px;
+      font-weight: 400;
+      margin-left: 15px;
+      letter-spacing: 1.5px;
+    }
+  }
+}

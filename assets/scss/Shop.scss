@@ -1,0 +1,35 @@
+.content-shop{
+  width: 100%;
+  margin-top: 40px;
+  .content-shop-items{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    .shop-item{
+      width: 400px;
+      height: 470px;
+      margin-bottom: 20px;
+      overflow: hidden;
+      .shop-item-img{
+        width: 400px;
+        height: 400px;
+        overflow: hidden;
+        position: relative;
+        img{
+          width: 200%;
+          position: absolute;
+          left: 50%;
+          transform: translate(-50%);
+          cursor: pointer;
+        }
+      }
+      .shop-item-info{
+        margin-top: 5px;
+        display: flex;
+        justify-content: space-between;
+        cursor: pointer;
+        text-transform: uppercase;
+      }
+    }
+  }
+}

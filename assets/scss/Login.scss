@@ -1,0 +1,19 @@
+.login-content{
+  display: flex;
+  width: 100%;
+  .login-left{
+    width: 40%;
+    img{
+      position: absolute;
+      top: 0;
+      height: 100vh;
+    }
+  }
+  .login-right{
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+  
+  }
+}

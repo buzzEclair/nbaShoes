@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
 import NavSide from '../Components/NavSIde';
+import {API_URL} from '../../config';
 
 const Product = ({history, match}) => {
 
@@ -15,7 +16,7 @@ const Product = ({history, match}) => {
   const fetchData = async id => {
     try{
       if(editing){
-        const { name, price, resume} = await Axios.get('http://127.0.0.1:8000/api/products/' + id).then(response => response.data);
+        const { name, price, resume} = await Axios.get(API_URL + '/products/' + id).then(response => response.data);
         setData({ name, price, resume});
       }
     }catch(error){
@@ -39,10 +40,10 @@ const Product = ({history, match}) => {
     
     try{
       if(!editing){
-        await Axios.post('http://127.0.0.1:8000/api/products', data)
+        await Axios.post(API_URL + '/products', data)
         history.replace('/dashboard/products')
       }else{
-        await Axios.put('http://127.0.0.1:8000/api/products/'+ id, data)
+        await Axios.put(API_URL + '/products/'+ id, data)
       }
     }catch (response) {
       const { violations } = response.data;

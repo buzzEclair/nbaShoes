@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import Axios from 'axios';
 import ImgShop from '../Components/imgShop';
+import { API_URL } from '../config';
 
 const SearchPage = (props) => {
 
@@ -13,7 +14,7 @@ const SearchPage = (props) => {
   const search = async() => {
     try {
       await Axios
-      .get('http://127.0.0.1:8000/api/products?name='+query)
+      .get(API_URL + '/products?name='+query)
       .then(response => setResult(response.data['hydra:member']))
     } catch (error) {
       

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import NavSide from '../Components/NavSIde';
 import Axios from 'axios';
+import {API_URL} from '../../config';
 
 const StockAdd = ({match, history}) => {
 
@@ -17,7 +18,7 @@ const StockAdd = ({match, history}) => {
   const fetchDataProduct = async id => {
 
     try{
-      const response = await Axios.get('http://127.0.0.1:8000/api/products/' + id).then(setValidate(true))
+      const response = await Axios.get(API_URL + '/products/' + id).then(setValidate(true))
       setStockProducts(response.data.stocks);
       
     }catch(error){
@@ -40,7 +41,7 @@ const StockAdd = ({match, history}) => {
     }
     try{
       console.log(id);
-      await Axios.post('http://127.0.0.1:8000/api/stocks', {...dataStock, productId: '/api/products/'+id})
+      await Axios.post(API_URL + '/stocks', {...dataStock, productId: '/api/products/'+id})
       history.replace('/dashboard/stocks')
     }catch(error){
       console.log(error)

@@ -27,7 +27,7 @@ const Login = ({history}) => {
   const handleSubmit = async event => {
     event.preventDefault();
     try{
-      await Axios.post('http://127.0.0.1:8000/api/login_check', {
+      await Axios.post(API_URL + '/login_check', {
         username : credentials.username,
         password : credentials.password
       }, 

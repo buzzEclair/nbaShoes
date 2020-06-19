@@ -4,14 +4,15 @@ import Axios from 'axios';
 import '../../scss/Shop.scss';
 import ImgShop from '../Components/imgShop';
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
+import {API_URL} from '../config';
 
 const Shop = ({history}) => {
-
+  console.log(API_URL);
   const [items, setItems] = useState([]);
 
   const fetchItems = async() => {
     try {
-      Axios.get('http://127.0.0.1:8000/api/products')
+      Axios.get(API_URL + 'products')
       .then(response => setItems(response.data['hydra:member']))
     }catch(error) {
       console.log(error)

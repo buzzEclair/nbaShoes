@@ -5,6 +5,7 @@ import Axios from 'axios';
 import AuthContext from '../Contexts/AuthContext';
 import basketContext from '../Contexts/basketContext';
 import { Link } from 'react-router-dom';
+import { API_URL } from '../config';
 
 const Item = ({history, match}) => {
   
@@ -76,7 +77,7 @@ const Item = ({history, match}) => {
 
   const fetchItem = async(id) => {
     try{
-      Axios.get('http://127.0.0.1:8000/api/products/'+id)
+      Axios.get(API_URL + '/products/'+id)
       .then(response => setItem(response.data));
      
     }catch(error){

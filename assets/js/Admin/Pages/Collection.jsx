@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import NavSide from '../Components/NavSIde';
 import Axios from 'axios';
 import ImgShopThumb from '../Components/ImgShopThumb';
+import {API_URL} from '../../config';
 
 const Collection = ({history, match}) => {
 
@@ -18,7 +19,7 @@ const Collection = ({history, match}) => {
   const fetchData = async id => {
     try{
       if(editing){
-        const { title, productList} = await Axios.get('http://127.0.0.1:8000/api/collections/' + id).then(response => response.data);
+        const { title, productList} = await Axios.get(API_URL + '/collections/' + id).then(response => response.data);
         setData({ title, productList});
       }
     }catch(error){
@@ -28,7 +29,7 @@ const Collection = ({history, match}) => {
 
   const fetchItem = async () => {
     try{
-      await Axios.get('http://127.0.0.1:8000/api/products/').then(response => setProducts(response.data['hydra:member']))
+      await Axios.get(API_URL + '/products/').then(response => setProducts(response.data['hydra:member']))
     }catch(error){
       console.log(error)
     }
@@ -45,10 +46,10 @@ const Collection = ({history, match}) => {
     
     try{
       if(!editing){
-        await Axios.post('http://127.0.0.1:8000/api/collections', data)
+        await Axios.post(API_URL + '/collections', data)
         history.replace('/dashboard/collections')
       }else{
-        await Axios.put('http://127.0.0.1:8000/api/collections/'+ id, data)
+        await Axios.put(API_URL + '/collections/'+ id, data)
         history.replace('/dashboard/collections')
       }
     }catch (response) {

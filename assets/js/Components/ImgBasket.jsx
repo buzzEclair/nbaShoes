@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Axios from 'axios';
 import UnsplashAPI from '../Services/UnsplashAPI';
+import { API_URL } from '../config';
 
 const ImgBasket = ({id}) => {
 
@@ -11,7 +12,7 @@ const ImgBasket = ({id}) => {
   const fetchItem = async () => {
 
     try{
-      Axios.get('http://127.0.0.1:8000/api/products/' + id).then(response => Axios.get(UnsplashAPI.unsplashId(response.data.pictures[0])).then(data => setData(data.data.urls.small)))
+      Axios.get(API_URL + '/products/' + id).then(response => Axios.get(UnsplashAPI.unsplashId(response.data.pictures[0])).then(data => setData(data.data.urls.small)))
     }catch(error){
       console.log(error);
     }

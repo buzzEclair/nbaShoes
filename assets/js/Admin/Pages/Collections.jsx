@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import NavSide from '../Components/NavSIde';
 import Axios from 'axios';
 import { Link } from 'react-router-dom';
+import {API_URL} from '../../config';
 
 const Collections = (props) => {
 
@@ -10,7 +11,7 @@ const Collections = (props) => {
 
   const fetchData = async => {
     try{
-      Axios.get('http://127.0.0.1:8000/api/collections')
+      Axios.get(API_URL + '/collections')
       .then(response => setData(response.data['hydra:member']))
     }catch(error){
       console.log(error);

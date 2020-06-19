@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import '../../scss/Home.scss';
 import { setInterval } from 'core-js';
 import Axios from 'axios';
+import { API_URL } from '../config';
 
 
 const Home = ({history}) => {
@@ -14,7 +15,7 @@ const Home = ({history}) => {
   const fetchCollection = async() => {
     try {
       await Axios
-      .get('http://127.0.0.1:8000/api/collections?title=home')
+      .get(API_URL + '/collections?title=home')
       .then(response => setCollection(response.data['hydra:member'][0].productList))
     } catch (error) {
       console.log(error)

@@ -4,6 +4,7 @@ import AuthContext from '../Contexts/AuthContext';
 import Axios from 'axios';
 import ImgShop from '../Components/imgShop';
 import ImgBasket from '../Components/ImgBasket';
+import { API_URL } from '../config';
 
 
 const Basket = ({history}) => {
@@ -50,7 +51,7 @@ const Basket = ({history}) => {
 
     try{
       
-      await Axios.post('http://127.0.0.1:8000/api/sells', {
+      await Axios.post(API_URL + '/sells', {
         amount: amount,
         products : basketLocal
       },config).then(function (response) {

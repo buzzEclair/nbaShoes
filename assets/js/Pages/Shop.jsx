@@ -7,12 +7,12 @@ import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import {API_URL} from '../config';
 
 const Shop = ({history}) => {
-  console.log(API_URL);
   const [items, setItems] = useState([]);
-
+  
   const fetchItems = async() => {
     try {
-      Axios.get(API_URL + 'products')
+      console.log(API_URL + '/products');
+      Axios.get(API_URL + '/products')
       .then(response => setItems(response.data['hydra:member']))
     }catch(error) {
       console.log(error)

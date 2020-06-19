@@ -4,6 +4,7 @@ import Axios from 'axios';
 import AuthContext from '../Contexts/AuthContext';
 import JwtDecode from "jwt-decode";
 import AdminContext from '../Contexts/AdminContext';
+import { API_URL } from '../config';
 
 const Login = ({history}) => {
 
@@ -49,7 +50,11 @@ const Login = ({history}) => {
         history.replace("/");
       }
     } catch(error) {
-      setError("Bad informations !")
+      console.log(error.response.data);
+      console.log(error.response.status);
+      console.log(error.response.headers);
+ 
+      //setError("Bad informations !")
     }
   }
 

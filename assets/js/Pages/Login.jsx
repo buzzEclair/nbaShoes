@@ -70,7 +70,7 @@ const Login = ({history}) => {
           
           <form onSubmit={handleSubmit}>
             {(error) && <p>{error}</p>}
-            <h2>Sign In to NBA Nike Shoes</h2>
+            <h2>Sign In to NBA Nike Shoes 1</h2>
             <div className="form-grp">
               <label>Email Address</label>
               <input value={credentials.username} onChange={handleChange} name="username" id="username" type="text" placeholder="Email Address"/>

@@ -11,7 +11,6 @@ const Shop = ({history}) => {
   
   const fetchItems = async() => {
     try {
-      console.log(API_URL + '/products');
       Axios.get(API_URL + '/products')
       .then(response => setItems(response.data['hydra:member']))
     }catch(error) {

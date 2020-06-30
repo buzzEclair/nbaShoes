@@ -2,10 +2,8 @@ import React, { useEffect, useState, useContext } from 'react';
 import '../../scss/Basket.scss';
 import AuthContext from '../Contexts/AuthContext';
 import Axios from 'axios';
-import ImgShop from '../Components/imgShop';
 import ImgBasket from '../Components/ImgBasket';
 import { API_URL } from '../config';
-
 
 const Basket = ({history}) => {
 
@@ -87,8 +85,8 @@ const Basket = ({history}) => {
   const handlePayement = () => {
     if(isAuthenticated){
       linkBasketToUser();
-      //localStorage.removeItem('basket');
-      //history.replace('/payement')
+      localStorage.removeItem('basket');
+      history.replace('/payement')
     }else{
       history.replace('/login')
     }
@@ -100,7 +98,6 @@ const Basket = ({history}) => {
         basketLocal.splice(j, 1);
       }
     }
-    console.log(basketLocal);
     setBasketLocal(basketLocal);
     setProcess(process + 1);
     localStorage.removeItem('basket');
@@ -127,7 +124,6 @@ const Basket = ({history}) => {
             </thead>
             <tbody>
             {
-
               basketLocal.map(item=>
                 <tr key={item.productId}>
                   <td>
@@ -152,7 +148,6 @@ const Basket = ({history}) => {
                   <td  ><span onClick={() => handleRemove(item.productId)}className="table-td-remove">x</span></td>
                 </tr>
               )
-             
             }
             </tbody>
           </table>
@@ -183,9 +178,6 @@ const Basket = ({history}) => {
           </div>
         <button onClick={handlePayement} className="primary">Payement</button>
         </div>
-
-
-
       </div>
     </div>
   </> );

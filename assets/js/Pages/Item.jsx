@@ -185,8 +185,6 @@ const Item = ({history, match}) => {
         </div>
         <div className="product-add-btn">
           <Link to="/basket"><button>Go to basket</button></Link>
-          
-          <button>Payment</button>
         </div>
       </div>
     </div>

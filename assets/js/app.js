@@ -67,7 +67,7 @@ const App = () => {
         <Route path="/shop/:id" component={Item}></Route>
         <Route path="/shop" component={Shop}></Route>
         <Route path="/basket" component={Basket}></Route>
-        <Route path="/" component={Home}></Route>
+        <Route path="/" component={Shop}></Route>
       </Switch>
     </HashRouter>
     </AuthContext.Provider>
